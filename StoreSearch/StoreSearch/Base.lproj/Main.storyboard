@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="StoreSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="33E-0B-ubf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="q6y-sW-VnV"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="vUF-A5-QrM"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" placeholder="App name, artist, song, album, e-book" translatesAutoresizingMaskIntoConstraints="NO" id="DMu-VS-Nb1">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <color key="tintColor" name="Search Bar"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="taD-Wg-l3p"/>
+                                </connections>
+                            </searchBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A4M-Cq-Fip">
+                                <rect key="frame" x="0.0" y="51" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" id="LeE-Cq-tWZ">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="sgC-K6-tml">
+                                            <rect key="frame" x="16" y="5.5" width="343" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="All"/>
+                                                <segment title="Music"/>
+                                                <segment title="Software"/>
+                                                <segment title="E-books"/>
+                                            </segments>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="33E-0B-ubf" secondAttribute="bottom" id="0dy-cA-PF1"/>
+                            <constraint firstItem="A4M-Cq-Fip" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4ec-bW-WXw"/>
+                            <constraint firstItem="33E-0B-ubf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5Ei-dR-RuG"/>
+                            <constraint firstItem="33E-0B-ubf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Jy9-xv-Ars"/>
+                            <constraint firstItem="33E-0B-ubf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OB0-RJ-883"/>
+                            <constraint firstItem="DMu-VS-Nb1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Ouh-8r-P1e"/>
+                            <constraint firstItem="A4M-Cq-Fip" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="31" id="Ved-7Z-PYI"/>
+                            <constraint firstAttribute="trailing" secondItem="DMu-VS-Nb1" secondAttribute="trailing" id="ZV4-X0-gKq"/>
+                            <constraint firstItem="DMu-VS-Nb1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="k0A-C3-vKu"/>
+                            <constraint firstItem="A4M-Cq-Fip" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="t7i-Xb-2A4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="DMu-VS-Nb1" id="q9e-M5-YBG"/>
+                        <outlet property="segmentedControl" destination="sgC-K6-tml" id="LN4-Xw-ahK"/>
+                        <outlet property="tableView" destination="33E-0B-ubf" id="miW-Op-oeN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="Search Bar">
+            <color red="0.70588235294117652" green="0.94117647058823528" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
